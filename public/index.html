@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,234 +8,240 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>myhomebakery</title>
 </head>
+
 <body>
     <!-- Navbar Container -->
     <header class="site-header" id="siteHeader">
-    <div class="nav-container">
-        <!-- Logo / Brand with cute bakery icon -->
-        <a href="/" class="nav-logo">
-        <div class="logo-icon-wrapper">
-            <!-- Cute pastel cake SVG illustration -->
-            <img src="./cake.png" alt="cake" width="42" height="">
+        <div class="nav-container">
+            <!-- Logo / Brand with cute bakery icon -->
+            <a href="/" class="nav-logo">
+                <div class="logo-icon-wrapper">
+                    <!-- Cute pastel cake SVG illustration -->
+                    <img src="./cake.png" alt="cake" width="42" height="">
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="nav-menu" id="navMenu">
+                <a href="./cakes.html" class="nav-link">Our Cakes</a>
+                <a href="#hampers" class="nav-link">Our Hampers</a>
+                <a href="#visit" class="nav-link">Visit Us</a>
+            </nav>
+
+            <!-- Mobile Hamburger Toggle Button -->
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         </div>
-        </a>
-
-        <!-- Navigation Links -->
-        <nav class="nav-menu" id="navMenu">
-        <a href="./cakes.html" class="nav-link">Our Cakes</a>
-        <a href="#hampers" class="nav-link">Our Hampers</a>
-        <a href="#visit" class="nav-link">Visit Us</a>
-        </nav>
-
-        <!-- Mobile Hamburger Toggle Button -->
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-        </button>
-    </div>
     </header>
     <!-- Hero Banner Section -->
     <section class="hero-section">
-    <div class="hero-container">
-        <!-- Brand Title -->
-        <h1 class="brand-title">myhomebakery</h1>
+        <div class="hero-container">
+            <!-- Brand Title -->
+            <h1 class="brand-title">myhomebakery</h1>
 
-        <p class="disclaimer">*Delivers Only in Lucknow</p>
-        
-        <!-- Tagline -->
-        <p class="brand-tagline">
-        Home Baked<br>Fresh Cakes
-        </p>
-    </div>
+            <p class="disclaimer">*Delivers Only in Lucknow</p>
+
+            <!-- Tagline -->
+            <p class="brand-tagline">
+                Home Baked<br>Fresh Cakes
+            </p>
+        </div>
     </section>
     <!-- Album / Gallery Display Section -->
     <section class="album-section">
-    <div class="album-grid">
-        
-        <!-- Card 1: Tall Image (e.g., Iced Coffee) -->
-        <div class="album-card image-card">
-        <img src="./images/DollCake.png" alt="Doll Cake" />
-        </div>
+        <div class="album-grid">
 
-        <!-- Card 2: Square/Horizontal Image (e.g., Pastry Swirl) -->
-        <div class="album-card image-card">
-        <img src="./images/MoneyCake.png" alt="Money Cake" />
-        </div>
+            <!-- Card 1: Tall Image (e.g., Iced Coffee) -->
+            <div class="album-card image-card">
+                <img src="./images/DollCake.png" alt="Doll Cake" />
+            </div>
 
-        <!-- Card 3: Brown Info Card -->
-        <div class="album-card info-card">
-        <div class="info-content">
-            <a href="#menu" class="explore-btn">Explore Menu</a>
-            <address class="store-address">
-            Hussainabad,<br>
-            Chota Imambada Chowk,<br>
-            Lucknow
-            </address>
-        </div>
-        </div>
+            <!-- Card 2: Square/Horizontal Image (e.g., Pastry Swirl) -->
+            <div class="album-card image-card">
+                <img src="./images/MoneyCake.png" alt="Money Cake" />
+            </div>
 
-        <!-- Card 4: Tall Image (e.g., Store Window) -->
-        <div class="album-card image-card">
-        <img src="./images/FlowerCake.png" alt="Flower Cake" />
-        </div>
+            <!-- Card 3: Brown Info Card -->
+            <div class="album-card info-card">
+                <div class="info-content">
+                    <a href="#menu" class="explore-btn">Explore Menu</a>
+                    <address class="store-address">
+                        Hussainabad,<br>
+                        Chota Imambada Chowk,<br>
+                        Lucknow
+                    </address>
+                </div>
+            </div>
 
-    </div>
+            <!-- Card 4: Tall Image (e.g., Store Window) -->
+            <div class="album-card image-card">
+                <img src="./images/FlowerCake.png" alt="Flower Cake" />
+            </div>
+
+        </div>
     </section>
     <!-- Straight From Our Ovens Section -->
     <section class="ovens-section" id="ovensSection">
-    <div class="ovens-container">
-        
-        <!-- Left Side: Heading -->
-        <div class="ovens-left">
-        <h2 class="ovens-title">Straight<br>From Our<br>Ovens</h2>
+        <div class="ovens-container">
+
+            <!-- Left Side: Heading -->
+            <div class="ovens-left">
+                <h2 class="ovens-title">Straight<br>From Our<br>Ovens</h2>
+            </div>
+
+            <!-- Right Side: Textured Background with Receipt Card & Stickers -->
+            <div class="ovens-right">
+                <!-- Purple Badge Stickers -->
+                <div class="sticker sticker-warm">Warm</div>
+                <div class="sticker sticker-fresh">Fresh</div>
+
+                <!-- Receipt Style Menu Card -->
+                <div class="receipt-card">
+                    <h3 class="receipt-title">Our Menu</h3>
+
+                    <ul class="menu-list">
+                        <li>
+                            <span class="item-name">Bento Cake</span>
+                            <span class="item-price">₹200</span>
+                        </li>
+                        <li>
+                            <span class="item-name">Vanilla Half kg</span>
+                            <span class="item-price">₹300</span>
+                        </li>
+                        <li>
+                            <span class="item-name">Chocolate Half kg</span>
+                            <span class="item-price">₹350</span>
+                        </li>
+                        <li>
+                            <span class="item-name">Cupcakes</span>
+                            <span class="price-wrapper">
+                                <span class="item-price">₹29</span>
+                                <span class="item-unit">(per piece)</span>
+                            </span>
+                        </li>
+                    </ul>
+
+                    <p class="receipt-note">Free Customised Note</p>
+                    <div class="receipt-divider"></div>
+
+                    <!-- Functional Explore Menu Button -->
+                    <button class="explore-menu-btn" id="exploreMenuBtn">Explore Menu</button>
+                </div>
+            </div>
+
         </div>
-
-        <!-- Right Side: Textured Background with Receipt Card & Stickers -->
-        <div class="ovens-right">
-        <!-- Purple Badge Stickers -->
-        <div class="sticker sticker-warm">Warm</div>
-        <div class="sticker sticker-fresh">Fresh</div>
-
-        <!-- Receipt Style Menu Card -->
-        <div class="receipt-card">
-            <h3 class="receipt-title">Our Menu</h3>
-            
-            <ul class="menu-list">
-            <li>
-                <span class="item-name">Bento Cake</span>
-                <span class="item-price">₹200</span>
-            </li>
-            <li>
-                <span class="item-name">Vanilla Half kg</span>
-                <span class="item-price">₹300</span>
-            </li>
-            <li>
-                <span class="item-name">Chocolate Half kg</span>
-                <span class="item-price">₹350</span>
-            </li>
-            <li>
-                <span class="item-name">Cupcakes</span>
-                <span class="price-wrapper">
-                    <span class="item-price">₹29</span>
-                    <span class="item-unit">(per piece)</span>
-                </span>
-            </li>
-            </ul>
-
-            <p class="receipt-note">Free Customised Note</p>
-            <div class="receipt-divider"></div>
-
-            <!-- Functional Explore Menu Button -->
-            <button class="explore-menu-btn" id="exploreMenuBtn">Explore Menu</button>
-        </div>
-        </div>
-
-    </div>
     </section>
 
     <!-- Functional Menu Modal Popup -->
     <div class="menu-modal" id="menuModal">
-    <div class="modal-content">
-        <button class="close-modal" id="closeModal">&times;</button>
-        <h2 class="modal-title">Full Bakery Menu</h2>
-        <p class="modal-subtitle">Freshly baked goodness made daily in Lucknow.</p>
-        
-        <div class="modal-menu-grid">
-        <div class="menu-category">
-            <h4>Cakes & Pastries</h4>
-            <ul>
-            <li><span>Chocolate Truffle Cake</span><span>₹650</span></li>
-            <li><span>Strawberry Shortcake</span><span>₹700</span></li>
-            <li><span>Blueberry Danish</span><span>₹220</span></li>
-            </ul>
-        </div>
-        <div class="menu-category">
-            <h4>Breads & Savories</h4>
-            <ul>
-            <li><span>Garlic Sourdough</span><span>₹380</span></li>
-            <li><span>Whole Wheat Loaf</span><span>₹250</span></li>
-            <li><span>Veg Puff / Quiche</span><span>₹120</span></li>
-            </ul>
-        </div>
-        </div>
-    </div>
-    </div>
-    <!-- Customer Reviews Section -->
-    <section class="reviews-section">
-    <div class="reviews-container">
-        
-        <!-- Left / Top: Title & Highlights -->
-        <div class="reviews-header-pane">
-        <span class="reviews-subtitle">Loved by Locals</span>
-        <h2 class="reviews-title">What Our Customers Say</h2>
-        </div>
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">&times;</button>
+            <h2 class="modal-title">Full Bakery Menu</h2>
+            <p class="modal-subtitle">Freshly baked goodness made daily in Lucknow.</p>
 
-        <!-- Right / Bottom: Review Card Pane -->
-        <div class="reviews-content-pane">
-        <div class="review-card">
-            <p class="review-text">
-            Thank you so much! The taste was really good, and my father absolutely loved the cake design and taste as well. It had chocolate with a perfect balance of strawberry just as I wanted. This was truly my find of the day, and I will definitely order again in the future! 🩵
-            </p>
-            <div class="reviewer-info">
-            <h4 class="reviewer-name">Happy Customer</h4>
-            <!-- <span class="reviewer-tag">Verified Foodie</span> -->
+            <div class="modal-menu-grid">
+                <div class="menu-category">
+                    <h4>Cakes & Pastries</h4>
+                    <ul>
+                        <li><span>Chocolate Truffle Cake</span><span>₹650</span></li>
+                        <li><span>Strawberry Shortcake</span><span>₹700</span></li>
+                        <li><span>Blueberry Danish</span><span>₹220</span></li>
+                    </ul>
+                </div>
+                <div class="menu-category">
+                    <h4>Breads & Savories</h4>
+                    <ul>
+                        <li><span>Garlic Sourdough</span><span>₹380</span></li>
+                        <li><span>Whole Wheat Loaf</span><span>₹250</span></li>
+                        <li><span>Veg Puff / Quiche</span><span>₹120</span></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-    </div>
+    <!-- Customer Reviews Section -->
+    <section class="reviews-section">
+        <div class="reviews-container">
+
+            <!-- Left / Top: Title & Highlights -->
+            <div class="reviews-header-pane">
+                <span class="reviews-subtitle">Loved by Locals</span>
+                <h2 class="reviews-title">What Our Customers Say</h2>
+            </div>
+
+            <!-- Right / Bottom: Review Card Pane -->
+            <div class="reviews-content-pane">
+                <div class="review-card">
+                    <p class="review-text">
+                        Thank you so much! The taste was really good, and my father absolutely loved the cake design and
+                        taste as well. It had chocolate with a perfect balance of strawberry just as I wanted. This was
+                        truly my find of the day, and I will definitely order again in the future! 🩵
+                    </p>
+                    <div class="reviewer-info">
+                        <h4 class="reviewer-name">Happy Customer</h4>
+                        <!-- <span class="reviewer-tag">Verified Foodie</span> -->
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <!-- Site Footer -->
     <footer class="site-footer">
-    <div class="footer-container">
-        
-        <!-- Column 1: Brand & Instagram -->
-        <div class="footer-col brand-col">
-        <h3 class="footer-brand">myhomebakery</h3>
-        <p class="footer-tagline">Home Baked Fresh Cakes in Lucknow</p>
+        <div class="footer-container">
 
-        <!-- Instagram Link Button -->
-        <a href="https://www.instagram.com/_.myhomebakery" target="_blank" rel="noopener noreferrer" class="instagram-link">
-            <img src="./instagram-logo.svg" viewBox="0 0 24 24"  width="20" height="20" fill="currentColor" alt="instagram logo">
-            <span>Follow us @_.myhomebakery</span>
-        </a>
+            <!-- Column 1: Brand & Instagram -->
+            <div class="footer-col brand-col">
+                <h3 class="footer-brand">myhomebakery</h3>
+                <p class="footer-tagline">Home Baked Fresh Cakes in Lucknow</p>
+
+                <!-- Instagram Link Button -->
+                <a href="https://www.instagram.com/_.myhomebakery" target="_blank" rel="noopener noreferrer"
+                    class="instagram-link">
+                    <img src="./instagram-logo.svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"
+                        alt="instagram logo">
+                    <span>Follow us @_.myhomebakery</span>
+                </a>
+            </div>
+
+            <!-- Column 2: Delivery Details -->
+            <div class="footer-col delivery-col">
+                <h4 class="footer-heading">Delivery Info</h4>
+                <p class="delivery-status">
+                    <span class="pulse-dot"></span> Delivers only in Lucknow
+                </p>
+                <div class="delivery-charge-badge">
+                    <span>*Delivery available with extra charges applied based on location</span>
+                </div>
+            </div>
+
+            <!-- Column 3: Contact Info -->
+            <div class="footer-col contact-col">
+                <h4 class="footer-heading">Contact Us</h4>
+                <ul class="contact-list">
+                    <li>
+                        <strong>Address:</strong> Hussainabad Chota Imambada, Chowk, Lucknow
+                    </li>
+                    <li>
+                        <!-- <strong>Phone / WhatsApp:</strong> <a href="tel:+919876543210">+91 98765 43210</a> -->
+                    </li>
+                    <li>
+                        <!-- <strong>Email:</strong> <a href="mailto:order@myhomebakery.com">order@myhomebakery.com</a> -->
+                    </li>
+                </ul>
+            </div>
+
         </div>
 
-        <!-- Column 2: Delivery Details -->
-        <div class="footer-col delivery-col">
-        <h4 class="footer-heading">Delivery Info</h4>
-        <p class="delivery-status">
-            <span class="pulse-dot"></span> Delivers only in Lucknow
-        </p>
-        <div class="delivery-charge-badge">
-            <span>*Delivery available with extra charges applied based on location</span>
+        <!-- Bottom Copyright Bar -->
+        <div class="footer-bottom">
+            <p>© 2026 myhomebakery. All rights reserved.</p>
         </div>
-        </div>
-
-        <!-- Column 3: Contact Info -->
-        <div class="footer-col contact-col">
-        <h4 class="footer-heading">Contact Us</h4>
-        <ul class="contact-list">
-            <li>
-            <strong>Address:</strong> Hussainabad Chota Imambada, Chowk, Lucknow
-            </li>
-            <li>
-            <!-- <strong>Phone / WhatsApp:</strong> <a href="tel:+919876543210">+91 98765 43210</a> -->
-            </li>
-            <li>
-            <!-- <strong>Email:</strong> <a href="mailto:order@myhomebakery.com">order@myhomebakery.com</a> -->
-            </li>
-        </ul>
-        </div>
-
-    </div>
-
-    <!-- Bottom Copyright Bar -->
-    <div class="footer-bottom">
-        <p>© 2026 myhomebakery. All rights reserved.</p>
-    </div>
     </footer>
-<script src="script.js"></script>
-<script defer src="/_vercel/insights/script.js"></script>
+    <script src="script.js"></script>
+    <script defer src="/_vercel/insights/script.js"></script>
 </body>
+
 </html>

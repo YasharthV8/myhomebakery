@@ -4,40 +4,38 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Our Cakes | myhomebakery</title>
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="cakes.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
 
-  <!-- Floating Sticky Navbar -->
-  <header class="site-header" id="siteHeader">
-    <div class="nav-container">
-      <a href="index.html" class="nav-logo">
-        <div class="logo-icon-wrapper">
-          <svg viewBox="0 0 64 64" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M32 10C29 10 27 12 27 14C25.5 13 24 14 24 16C22.5 16 21 17.5 21 19V24H43V19C43 17.5 41.5 16 40 16C40 14 38.5 13 37 14C37 12 35 10 32 10Z" fill="#E8929A"/>
-            <path d="M32 8C30.5 8 29 9.5 29 11C29 12.5 30.5 14 32 14C33.5 14 35 12.5 35 11C35 9.5 33.5 8 32 8Z" fill="#C95164"/>
-            <path d="M19 26C19 24.8954 19.8954 24 21 24H43C44.1046 24 45 24.8954 45 26V44C45 49.5228 40.5228 54 35 54H29C23.4772 54 19 49.5228 19 44V26Z" fill="#FFF0F3"/>
-            <circle cx="27" cy="39" r="1.5" fill="#4A3532"/>
-            <circle cx="37" cy="39" r="1.5" fill="#4A3532"/>
-            <path d="M30 42C31 43 33 43 34 42" stroke="#4A3532" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
+  <!-- Navbar Container -->
+    <header class="site-header" id="siteHeader">
+        <div class="nav-container">
+            <!-- Logo / Brand with cute bakery icon -->
+            <a href="/" class="nav-logo">
+                <div class="logo-icon-wrapper">
+                    <!-- Cute pastel cake SVG illustration -->
+                    <img src="./cake.png" alt="cake" width="42" height="">
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="nav-menu" id="navMenu">
+                <a href="./cakes.html" class="nav-link">Our Cakes</a>
+                <a href="#hampers" class="nav-link">Our Hampers</a>
+                <a href="#visit" class="nav-link">Visit Us</a>
+            </nav>
+
+            <!-- Mobile Hamburger Toggle Button -->
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         </div>
-      </a>
-
-      <nav class="nav-menu" id="navMenu">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="cakes.html" class="nav-link active">Our Cakes</a>
-        <a href="index.html#hampers" class="nav-link">Our Hampers</a>
-        <a href="index.html#visit" class="nav-link">Visit Us</a>
-      </nav>
-
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-    </div>
-  </header>
+    </header>
 
   <!-- Page Header Banner -->
   <section class="page-banner">
