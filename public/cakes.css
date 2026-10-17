@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Fredoka:wght@600;700&display=swap');
+
+:root {
+  --bg-color: #faf5e8;          /* Cream background */
+  --nav-bg: #faeab9;             /* Light yellow pastel navbar */
+  --brand-color: #4a2d20;        /* Deep warm chocolate brown */
+  --card-bg: #ffffff;
+  --accent-pink: #e8929a;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--brand-color);
+  font-family: 'Fredoka', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Header & Floating Navbar */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.site-header.nav-hidden {
+  transform: translateY(-20px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1100px;
+  background-color: var(--nav-bg);
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 28px;
+  box-shadow: 0 4px 20px rgba(74, 45, 32, 0.06);
+}
+
+.nav-menu {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-link {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--brand-color);
+  text-decoration: none;
+}
+
+.nav-link.active {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle .bar {
+  display: block;
+  width: 22px;
+  height: 2.5px;
+  margin: 4px auto;
+  background-color: var(--brand-color);
+}
+
+/* Page Banner */
+.page-banner {
+  padding-top: 130px;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.page-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  margin: 0;
+  color: var(--brand-color);
+}
+
+.page-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-style: italic;
+  margin: 10px 0 6px 0;
+}
+
+p.disclaimer {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Category Filter Buttons */
+.filter-wrapper {
+  max-width: 1200px;
+  margin: 30px auto 10px auto;
+  padding: 0 20px;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background-color: var(--nav-bg);
+  color: var(--brand-color);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.filter-btn.active, .filter-btn:hover {
+  background-color: var(--brand-color);
+  color: #fff;
+}
+
+/* Product Cards Grid */
+.cakes-section {
+  max-width: 1200px;
+  margin: 30px auto 60px auto;
+  padding: 0 20px;
+}
+
+.cakes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+.cake-card {
+  background-color: var(--card-bg);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(74, 45, 32, 0.08);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.cake-card:hover {
+  transform: translateY(-6px);
+}
+
+.cake-image-wrapper {
+  position: relative;
+  height: 240px;
+  width: 100%;
+}
+
+.cake-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tag-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: var(--accent-pink);
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.cake-info {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.cake-title {
+  font-size: 1.4rem;
+  margin: 0 0 8px 0;
+}
+
+.cake-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: #614638;
+  margin: 0 0 20px 0;
+  line-height: 1.35;
+}
+
+.cake-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cake-price {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.order-btn {
+  background-color: var(--brand-color);
+  color: #faf5e8;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.order-btn:hover {
+  background-color: #2b1810;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #311c13;
+  color: #faeab9;
+  padding: 40px 20px 20px 20px;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-brand {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.footer-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  margin: 4px 0 0 0;
+}
+
+.delivery-status {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.delivery-charge-badge {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--accent-pink);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 16px;
+  border-top: 1px solid #4a2d20;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.9rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: var(--nav-bg);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.3s ease;
+  }
+  
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .cakes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
