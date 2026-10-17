@@ -5,7 +5,9 @@ const routes = require('./routes/routes')
 const app = express();
 
 // Rouets
-app.use('/', routes)
+app.use('/', routes);
+
+module.exports = app;
 
 app.use(express.static(path.join(__dirname, '../public')));
 if (process.env.NODE_ENV !== 'production') {
