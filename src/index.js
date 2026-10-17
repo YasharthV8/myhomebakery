@@ -4,6 +4,10 @@ const routes = require('./routes/routes')
 
 const app = express();
 
+import { inject } from '@vercel/analytics';
+ 
+inject();
+
 // Rouets
 app.use('/', routes);
 
