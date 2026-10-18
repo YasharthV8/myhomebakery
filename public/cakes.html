@@ -1,34 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Our Cakes | myhomebakery</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="cakes.css">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-</head>
-<body>
 
-  <!-- Navbar Container -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse home baked cakes by category — bento, chocolate, vanilla, theme cakes and cupcakes. Delivering in Lucknow.">
+    <link rel="stylesheet" href="style_1.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- <link rel="icon" href="/cake.png" type="image/png"> -->
+    <title>Our Cakes | myhomebakery</title>
+</head>
+
+<body>
+    <!-- Navbar Container (same as home page) -->
     <header class="site-header" id="siteHeader">
         <div class="nav-container">
-            <!-- Logo / Brand with cute bakery icon -->
             <a href="/" class="nav-logo">
                 <div class="logo-icon-wrapper">
-                    <!-- Cute pastel cake SVG illustration -->
                     <img src="./cake.png" alt="cake" width="42" height="">
                 </div>
             </a>
 
-            <!-- Navigation Links -->
             <nav class="nav-menu" id="navMenu">
-                <a href="./cakes.html" class="nav-link">Our Cakes</a>
-                <a href="#hampers" class="nav-link">Our Hampers</a>
-                <a href="#visit" class="nav-link">Visit Us</a>
+                <a href="./cakes.html" class="nav-link active" aria-current="page">Our Cakes</a>
+                <a href="./index.html#hampers" class="nav-link">Our Hampers</a>
+                <a href="./index.html#visit" class="nav-link">Visit Us</a>
             </nav>
 
-            <!-- Mobile Hamburger Toggle Button -->
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -37,138 +35,241 @@
         </div>
     </header>
 
-  <!-- Page Header Banner -->
-  <section class="page-banner">
-    <h1 class="page-title">Freshly Baked Cakes</h1>
-    <p class="page-subtitle">Handcrafted with love in Lucknow using premium organic ingredients.</p>
-  </section>
+    <main>
+        <!-- Page Heading -->
+        <section class="gallery-hero">
+            <span class="gallery-eyebrow">Fresh from our kitchen</span>
+            <h1 class="gallery-title">Our Cakes</h1>
+            <p class="gallery-sub">Pick a category, find your favourite, and message us to order. *Delivers only in Lucknow</p>
+        </section>
 
-  <!-- Category Filter Menu -->
-  <div class="filter-wrapper">
-    <div class="filter-container">
-      <button class="filter-btn active" data-category="all">All Cakes</button>
-      <button class="filter-btn" data-category="bento">Bento Cakes</button>
-      <button class="filter-btn" data-category="half-kg">Half kg Cakes</button>
-      <button class="filter-btn" data-category="cheesecakes">Cheesecakes</button>
-    </div>
-  </div>
+        <!-- Category Filters -->
+        <section class="gallery-section">
+            <div class="filter-bar" id="filterBar" role="tablist" aria-label="Cake categories">
+                <button class="filter-chip active" data-filter="all" role="tab" aria-selected="true">All</button>
+                <button class="filter-chip" data-filter="theme" role="tab" aria-selected="false">Theme &amp; Designer</button>
+                <button class="filter-chip" data-filter="bento" role="tab" aria-selected="false">Bento Cakes</button>
+                <button class="filter-chip" data-filter="chocolate" role="tab" aria-selected="false">Chocolate</button>
+                <button class="filter-chip" data-filter="vanilla" role="tab" aria-selected="false">Vanilla</button>
+                <button class="filter-chip" data-filter="cupcakes" role="tab" aria-selected="false">Cupcakes</button>
+            </div>
 
-  <!-- Cakes Product Grid -->
-  <main class="cakes-section">
-    <div class="cakes-grid">
+            <p class="gallery-count" id="galleryCount" aria-live="polite"></p>
 
-      <!-- Card 1 -->
-      <div class="cake-card" data-category="bento">
-        <div class="cake-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1535141192574-5d4897c13136?q=80&w=600&auto=format&fit=crop" alt="Korean Bento Cake" />
-          <span class="tag-badge">Bestseller</span>
-        </div>
-        <div class="cake-info">
-          <h3 class="cake-title">Korean Strawberry Bento</h3>
-          <p class="cake-desc">Cute mini cake with fresh strawberry layers and light whipped cream frosting.</p>
-          <div class="cake-footer">
-            <span class="cake-price">₹200</span>
-            <button class="order-btn">Order Now</button>
-          </div>
-        </div>
-      </div>
+            <!-- Cake Grid -->
+            <div class="cake-grid" id="cakeGrid">
 
-      <!-- Card 2 -->
-      <div class="cake-card" data-category="half-kg">
-        <div class="cake-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=600&auto=format&fit=crop" alt="Chocolate Truffle" />
-        </div>
-        <div class="cake-info">
-          <h3 class="cake-title">Chocolate Fudge Truffle</h3>
-          <p class="cake-desc">Rich Belgian dark chocolate ganache layered with moist cocoa sponge cake (0.5 kg).</p>
-          <div class="cake-footer">
-            <span class="cake-price">₹350</span>
-            <button class="order-btn">Order Now</button>
-          </div>
-        </div>
-      </div>
+                <article class="cake-card" data-category="theme">
+                    <div class="cake-img">
+                        <img src="./images/DollCake.png" alt="Doll Cake" loading="lazy"
+                            onerror="this.parentElement.classList.add('img-missing');this.remove()">
+                    </div>
+                    <div class="cake-info">
+                        <span class="cake-tag">Theme &amp; Designer</span>
+                        <h3 class="cake-name">Doll Cake</h3>
+                        <p class="cake-desc">A doll-style showstopper, made to order for birthdays.</p>
+                        <div class="cake-meta">
+                            <span class="cake-price">Price on request</span>
+                            <a class="cake-order" href="https://www.instagram.com/_.myhomebakery" target="_blank" rel="noopener noreferrer">Order</a>
+                        </div>
+                    </div>
+                </article>
 
-      <!-- Card 3 -->
-      <div class="cake-card" data-category="half-kg">
-        <div class="cake-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?q=80&w=600&auto=format&fit=crop" alt="Vanilla Bean Cake" />
-        </div>
-        <div class="cake-info">
-          <h3 class="cake-title">Classic Vanilla Bean</h3>
-          <p class="cake-desc">Fluffy Madagascar vanilla cake topped with delicate buttercream frosting (0.5 kg).</p>
-          <div class="cake-footer">
-            <span class="cake-price">₹300</span>
-            <button class="order-btn">Order Now</button>
-          </div>
-        </div>
-      </div>
+                <article class="cake-card" data-category="theme">
+                    <div class="cake-img">
+                        <img src="./images/MoneyCake.png" alt="Money Cake" loading="lazy"
+                            onerror="this.parentElement.classList.add('img-missing');this.remove()">
+                    </div>
+                    <div class="cake-info">
+                        <span class="cake-tag">Theme &amp; Designer</span>
+                        <h3 class="cake-name">Money Cake</h3>
+                        <p class="cake-desc">A fun money-themed cake for celebrations and milestones.</p>
+                        <div class="cake-meta">
+                            <span class="cake-price">Price on request</span>
+                            <a class="cake-order" href="https://www.instagram.com/_.myhomebakery" target="_blank" rel="noopener noreferrer">Order</a>
+                        </div>
+                    </div>
+                </article>
 
-      <!-- Card 4 -->
-      <div class="cake-card" data-category="cheesecakes">
-        <div class="cake-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1524351199678-941a58a3df50?q=80&w=600&auto=format&fit=crop" alt="Basque Cheesecake" />
-          <span class="tag-badge">Fresh</span>
-        </div>
-        <div class="cake-info">
-          <h3 class="cake-title">Basque Burnt Cheesecake</h3>
-          <p class="cake-desc">Creamy caramelized cheesecake with a rich melted center and toasted crust.</p>
-          <div class="cake-footer">
-            <span class="cake-price">₹280</span>
-            <button class="order-btn">Order Now</button>
-          </div>
-        </div>
-      </div>
+                <article class="cake-card" data-category="theme">
+                    <div class="cake-img">
+                        <img src="./images/FlowerCake.png" alt="Flower Cake" loading="lazy"
+                            onerror="this.parentElement.classList.add('img-missing');this.remove()">
+                    </div>
+                    <div class="cake-info">
+                        <span class="cake-tag">Theme &amp; Designer</span>
+                        <h3 class="cake-name">Flower Cake</h3>
+                        <p class="cake-desc">A pretty floral design, perfect for gifting.</p>
+                        <div class="cake-meta">
+                            <span class="cake-price">Price on request</span>
+                            <a class="cake-order" href="https://www.instagram.com/_.myhomebakery" target="_blank" rel="noopener noreferrer">Order</a>
+                        </div>
+                    </div>
+                </article>
 
-      <!-- Card 5 -->
-      <div class="cake-card" data-category="bento">
-        <div class="cake-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?q=80&w=600&auto=format&fit=crop" alt="Custom Note Bento Cake" />
-        </div>
-        <div class="cake-info">
-          <h3 class="cake-title">Custom Message Bento</h3>
-          <p class="cake-desc">Personalized aesthetic mini cake with your custom written message on top.</p>
-          <div class="cake-footer">
-            <span class="cake-price">₹220</span>
-            <button class="order-btn">Order Now</button>
-          </div>
-        </div>
-      </div>
+                <article class="cake-card" data-category="bento">
+                    <div class="cake-img">
+                        <img src="./images/BentoCake.png" alt="Bento Cake" loading="lazy"
+                            onerror="this.parentElement.classList.add('img-missing');this.remove()">
+                    </div>
+                    <div class="cake-info">
+                        <span class="cake-tag">Bento Cakes</span>
+                        <h3 class="cake-name">Bento Cake</h3>
+                        <p class="cake-desc">A small lunchbox-style cake with a free customised note.</p>
+                        <div class="cake-meta">
+                            <span class="cake-price">₹200</span>
+                            <a class="cake-order" href="https://www.instagram.com/_.myhomebakery" target="_blank" rel="noopener noreferrer">Order</a>
+                        </div>
+                    </div>
+                </article>
 
-      <!-- Card 6 -->
-      <div class="cake-card" data-category="cheesecakes">
-        <div class="cake-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?q=80&w=600&auto=format&fit=crop" alt="Blueberry Cheesecake" />
+                <article class="cake-card" data-category="bento">
+                    <div class="cake-img">
+                        <img src="./images/BentoCake2.png" alt="Bento Cake" loading="lazy"
+                            onerror="this.parentElement.classList.add('img-missing');this.remove()">
+                    </div>
+                    <div class="cake-info">
+                        <span class="cake-tag">Bento Cakes</span>
+                        <h3 class="cake-name">Bento Cake</h3>
+                        <p class="cake-desc">A small lunchbox-style cake with a free customised note.</p>
+                        <div class="cake-meta">
+                            <span class="cake-price">₹200</span>
+                            <a class="cake-order" href="https://www.instagram.com/_.myhomebakery" target="_blank" rel="noopener noreferrer">Order</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="cake-card" data-category="bento">
+                    <div class="cake-img">
+                        <img src="./images/BentoCake3.png" alt="Bento Cake" loading="lazy"
+                            onerror="this.parentElement.classList.add('img-missing');this.remove()">
+                    </div>
+                    <div class="cake-info">
+                        <span class="cake-tag">Bento Cakes</span>
+                        <h3 class="cake-name">Bento Cake</h3>
+                        <p class="cake-desc">A small lunchbox-style cake with a free customised note.</p>
+                        <div class="cake-meta">
+                            <span class="cake-price">₹200</span>
+                            <a class="cake-order" href="https://www.instagram.com/_.myhomebakery" target="_blank" rel="noopener noreferrer">Order</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="cake-card" data-category="bento">
+                    <div class="cake-img">
+                        <img src="./images/BentoCake4.png" alt="Bento Cake" loading="lazy"
+                            onerror="this.parentElement.classList.add('img-missing');this.remove()">
+                    </div>
+                    <div class="cake-info">
+                        <span class="cake-tag">Bento Cakes</span>
+                        <h3 class="cake-name">Bento Cake</h3>
+                        <p class="cake-desc">A small lunchbox-style cake with a free customised note.</p>
+                        <div class="cake-meta">
+                            <span class="cake-price">₹200</span>
+                            <a class="cake-order" href="https://www.instagram.com/_.myhomebakery" target="_blank" rel="noopener noreferrer">Order</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="cake-card" data-category="chocolate">
+                    <div class="cake-img">
+                        <img src="./images/ChocolateCake.png" alt="Chocolate Cake, half kg" loading="lazy"
+                            onerror="this.parentElement.classList.add('img-missing');this.remove()">
+                    </div>
+                    <div class="cake-info">
+                        <span class="cake-tag">Chocolate</span>
+                        <h3 class="cake-name">Chocolate Cake</h3>
+                        <p class="cake-desc">Half kg of rich chocolate, baked fresh.</p>
+                        <div class="cake-meta">
+                            <span class="cake-price">₹350 <small>/ half kg</small></span>
+                            <a class="cake-order" href="https://www.instagram.com/_.myhomebakery" target="_blank" rel="noopener noreferrer">Order</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="cake-card" data-category="vanilla">
+                    <div class="cake-img">
+                        <img src="./images/VanillaCake.png" alt="Vanilla Cake, half kg" loading="lazy"
+                            onerror="this.parentElement.classList.add('img-missing');this.remove()">
+                    </div>
+                    <div class="cake-info">
+                        <span class="cake-tag">Vanilla</span>
+                        <h3 class="cake-name">Vanilla Cake</h3>
+                        <p class="cake-desc">Half kg of soft, classic vanilla.</p>
+                        <div class="cake-meta">
+                            <span class="cake-price">₹300 <small>/ half kg</small></span>
+                            <a class="cake-order" href="https://www.instagram.com/_.myhomebakery" target="_blank" rel="noopener noreferrer">Order</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="cake-card" data-category="cupcakes">
+                    <div class="cake-img">
+                        <img src="./images/Cupcakes.png" alt="Cupcakes" loading="lazy"
+                            onerror="this.parentElement.classList.add('img-missing');this.remove()">
+                    </div>
+                    <div class="cake-info">
+                        <span class="cake-tag">Cupcakes</span>
+                        <h3 class="cake-name">Cupcakes</h3>
+                        <p class="cake-desc">Single-serve treats, great for parties and gifting.</p>
+                        <div class="cake-meta">
+                            <span class="cake-price">₹29 <small>/ piece</small></span>
+                            <a class="cake-order" href="https://www.instagram.com/_.myhomebakery" target="_blank" rel="noopener noreferrer">Order</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Custom order callout -->
+        <section class="gallery-cta">
+            <div class="gallery-cta-card">
+                <h2 class="gallery-cta-title">Want something custom?</h2>
+                <p class="gallery-cta-text">Tell us your theme, flavour and date. Every cake comes with a free customised note.</p>
+                <a class="hero-order-btn gallery-cta-btn" href="https://www.instagram.com/_.myhomebakery" target="_blank" rel="noopener noreferrer">Message us on Instagram</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Site Footer (same as home page) -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col brand-col">
+                <h3 class="footer-brand">myhomebakery</h3>
+                <p class="footer-tagline">Home Baked Fresh Cakes in Lucknow</p>
+                <a href="https://www.instagram.com/_.myhomebakery" target="_blank" rel="noopener noreferrer"
+                    class="instagram-link">
+                    <img src="./instagram-logo.svg" width="20" height="20" alt="instagram logo">
+                    <span>Follow us @_.myhomebakery</span>
+                </a>
+            </div>
+
+            <div class="footer-col delivery-col">
+                <h4 class="footer-heading">Delivery Info</h4>
+                <p class="delivery-status">
+                    <span class="pulse-dot"></span> Delivers only in Lucknow
+                </p>
+                <div class="delivery-charge-badge">
+                    <span>*Delivery available with extra charges applied based on location</span>
+                </div>
+            </div>
+
+            <div class="footer-col contact-col">
+                <h4 class="footer-heading">Contact Us</h4>
+                <ul class="contact-list">
+                    <li><strong>Address:</strong> Hussainabad Chota Imambada, Chowk, Lucknow</li>
+                </ul>
+            </div>
         </div>
-        <div class="cake-info">
-          <h3 class="cake-title">Blueberry Swirl Cheesecake</h3>
-          <p class="cake-desc">Classic New York style baked cheesecake layered with fresh homemade blueberry compote.</p>
-          <div class="cake-footer">
-            <span class="cake-price">₹320</span>
-            <button class="order-btn">Order Now</button>
-          </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 myhomebakery. All rights reserved.</p>
         </div>
-      </div>
+    </footer>
 
-    </div>
-  </main>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-col">
-        <h3 class="footer-brand">myhomebakery</h3>
-        <p class="footer-tagline">Home Baked Fresh Cakes in Lucknow</p>
-      </div>
-      <div class="footer-col">
-        <p class="delivery-status"><span class="pulse-dot"></span> Delivers only in Lucknow</p>
-        <span class="delivery-charge-badge">*Delivery available with extra charges applied</span>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 myhomebakery. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script src="cakes.js"></script>
+    <script src="cakes.js"></script>
+    <script defer src="/_vercel/insights/script.js"></script>
 </body>
+
 </html>
