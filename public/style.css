@@ -362,7 +362,6 @@ p.disclaimer {
 .ovens-right {
   position: relative;
   background-color: #d9b99b;
-  background-image: url('https://images.unsplash.com/photo-1589367920969-ab8e050bbc0d?q=80&w=1000&auto=format&fit=crop');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -391,12 +390,14 @@ p.disclaimer {
   top: 30px;
   right: 40px;
   transform: rotate(12deg);
+  z-index: 10;
 }
 
 .sticker-fresh {
   bottom: 40px;
   left: 30px;
   transform: rotate(-15deg);
+  z-index: 10;
 }
 
 /* Receipt Card */
