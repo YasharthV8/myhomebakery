@@ -1,16 +1,57 @@
-body{
-    background-color: #fff6d9 ;
-}
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Fredoka:wght@600;700&display=swap');
 
-/* --- Navbar Variables & Reset --- */
+/* --- Root Variables & Reset --- */
 :root {
-  --nav-bg: #faeab9;            /* Warm pastel cream background from image */
-  --nav-text: #4a3532;          /* Rich warm brown text */
-  --nav-hover: #e8929a;         /* Soft dusty rose accent */
-  --nav-radius: 40px;           /* Rounded pill shape matching the design */
+  --bg-color: #faf5e8;
+  --nav-bg: #faeab9;
+  --nav-text: #4a3532;
+  --nav-hover: #e8929a;
+  --nav-radius: 40px;
+  --brand-color: #4a2d20;
+  --btn-hover: #311c13;
+  --card-radius: 24px;
+  --brown-bg: #4a2d20;
+  --btn-bg: #faeab9;
+  --btn-text: #4a2d20;
+  --cream-bg: #faf5e8;
+  --brown-text: #4a2d20;
+  --accent-purple: #c586cc;
+  --reviews-bg-dark: #4a2d20;
+  --reviews-text-light: #faf5e8;
+  --card-bg: #fcf8ee;
+  --card-text: #4a2d20;
+  --footer-bg: #311c13;
+  --footer-text: #faeab9;
+  --footer-accent: #e8929a;
+  --footer-border: #4a2d20;
 }
 
-/* --- Main Header Wrapper --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* anchors don't hide under the fixed navbar */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--brand-color);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* --- Main Header & Floating Navbar --- */
 .site-header {
   position: fixed;
   top: 0;
@@ -20,13 +61,9 @@ body{
   display: flex;
   justify-content: center;
   padding: 20px 16px;
-  box-sizing: border-box;
-  
-  /* Smooth transition for fading on scroll */
   transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease;
 }
 
-/* --- Scroll Fade State (Applied via JS) --- */
 .site-header.nav-hidden {
   opacity: 0;
   visibility: hidden;
@@ -34,7 +71,6 @@ body{
   pointer-events: none;
 }
 
-/* --- Floating Pill Container --- */
 .nav-container {
   width: 100%;
   max-width: 1100px;
@@ -45,14 +81,17 @@ body{
   justify-content: space-between;
   padding: 12px 32px;
   box-shadow: 0 4px 20px rgba(74, 53, 50, 0.06);
-  box-sizing: border-box;
 }
 
-/* --- Logo Styling --- */
 .nav-logo {
   display: flex;
   align-items: center;
   text-decoration: none;
+}
+
+.nav-logo img {
+  display: block;
+  height: auto;
 }
 
 .logo-icon-wrapper {
@@ -66,7 +105,6 @@ body{
   transform: scale(1.08) rotate(-4deg);
 }
 
-/* --- Navigation Links --- */
 .nav-menu {
   display: flex;
   align-items: center;
@@ -74,7 +112,7 @@ body{
 }
 
 .nav-link {
-  font-family: 'Georgia', serif; /* Classic bakery serif font feel */
+  font-family: 'Georgia', serif;
   font-size: 1.15rem;
   font-weight: 500;
   color: var(--nav-text);
@@ -90,7 +128,7 @@ body{
   height: 2px;
   bottom: -4px;
   left: 0;
-  background-color: var(--nav-text);
+  background-color: var(--nav-hover);
   transition: width 0.3s ease;
 }
 
@@ -102,7 +140,6 @@ body{
   width: 100%;
 }
 
-/* --- Mobile Toggle (Hamburger) --- */
 .nav-toggle {
   display: none;
   background: none;
@@ -121,215 +158,97 @@ body{
   transition: all 0.3s ease-in-out;
 }
 
-/* --- Mobile Responsiveness --- */
-@media (max-width: 768px) {
-  .site-header {
-    padding: 12px 12px;
-  }
-
-  .nav-container {
-    padding: 10px 20px;
-    border-radius: 30px;
-  }
-
-  .nav-toggle {
-    display: block;
-    z-index: 1002;
-  }
-
-  /* Hamburger active transformation */
-  .nav-toggle.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-  .nav-toggle.active .bar:nth-child(2) {
-    opacity: 0;
-  }
-  .nav-toggle.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-
-  /* Dropdown menu mobile style */
-  .nav-menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 75%;
-    max-width: 300px;
-    height: 100vh;
-    background-color: var(--nav-bg);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 28px;
-    box-shadow: -10px 0 30px rgba(74, 53, 50, 0.1);
-    transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-    z-index: 1001;
-  }
-
-  .nav-menu.active {
-    right: 0;
-  }
-
-  .nav-link {
-    font-size: 1.35rem;
-  }
-}
-
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Fredoka:wght@600;700&display=swap');
-
-:root {
-  --bg-color: #faf5e8;        /* Soft cream page background */
-  --brand-color: #4a2d20;     /* Deep warm chocolate brown */
-}
-
-/* Base body reset */
-body {
-  margin: 0;
-  background-color: var(--bg-color);
-  overflow-x: hidden;
-}
-
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Fredoka:wght@600;700&display=swap');
-
-:root {
-  --bg-color: #faf5e8;        /* Soft cream page background */
-  --brand-color: #4a2d20;     /* Deep warm chocolate brown */
-}
-
-body {
-  margin: 0;
-  background-color: var(--bg-color);
-  overflow-x: hidden;
-}
-
-/* Hero Section */
+/* --- Hero Banner Section --- */
 .hero-section {
-  padding-top: 140px;          /* Clears the fixed floating navbar */
-  padding-bottom: 60px;
-  padding-left: 24px;
-  padding-right: 24px;
-  box-sizing: border-box;
+  padding: 140px 24px 60px;
 }
 
-/* Desktop Layout */
+/* The HTML has no left-column wrapper, so a grid places the items:
+   title / disclaimer / button on the left, tagline bottom-right. */
 .hero-container {
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  align-items:flex-start;       /* Bottom of title aligns with top of tagline on desktop */
-  gap: 20px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 32px;
+  align-items: end;
 }
 
-/* Brand Title ("myhomebakery") - Automatically shrinks via clamp() */
 .brand-title {
+  grid-column: 1;
+  grid-row: 1;
   font-family: 'Fredoka', sans-serif;
-  /* Dynamically scales down from 6rem on desktop to 2rem on small mobile screens */
   font-size: clamp(2rem, 7.5vw, 6rem);
   font-weight: 700;
   color: var(--brand-color);
   margin: 0;
-  line-height: 1;           
+  line-height: 0.95;
   letter-spacing: -0.03em;
   text-transform: lowercase;
   text-align: left;
-  word-break: break-word; 
-  align-items: center;     /* Prevents text overflow */
+  overflow-wrap: anywhere;
 }
 
-/* Tagline ("Home Baked Fresh Cakes") - Dynamically shrinks via clamp() */
-.brand-tagline {
+p.disclaimer {
+  grid-column: 1;
+  grid-row: 2;
   font-family: 'Cormorant Garamond', 'Georgia', serif;
-  /* Dynamically scales down from 2.8rem on desktop to 1.3rem on small mobile screens */
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  font-weight: 500;
+  font-style: italic;
+  color: var(--brand-color);
+  margin: 10px 0 0;
+  text-align: left;
+}
+
+.hero-order-btn {
+  grid-column: 1;
+  grid-row: 3;
+  justify-self: start;
+  display: inline-block;
+  margin-top: 16px;
+  padding: 12px 32px;
+  background-color: var(--brand-color);
+  color: #faf5e8;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 14px rgba(74, 45, 32, 0.15);
+  transition: all 0.25s ease;
+}
+
+.hero-order-btn:hover {
+  background-color: var(--btn-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(74, 45, 32, 0.25);
+}
+
+.hero-order-btn:active {
+  transform: translateY(0);
+}
+
+.brand-tagline {
+  grid-column: 2;
+  grid-row: 1 / span 3;
+  align-self: start;
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
   font-size: clamp(1.3rem, 3.8vw, 2.8rem);
   font-weight: 500;
   color: var(--brand-color);
   margin: 0;
   line-height: 1.15;
-  display: flex;
-  flex-direction: column;
   text-align: right;
-  align-self: flex-end;           /* Right-aligned on desktop */
-}
-/* Styling for the disclaimer text */
-p.disclaimer {
-  font-family: 'Cormorant Garamond', 'Georgia', serif;
-  font-size: 1rem;
-  font-weight: 500;
-  font-style: italic;
-  color: #4a2d20;           /* Matches the deep warm chocolate brown brand color */
-  margin-top: 8px;          /* Space between the brand title and the text */
-  margin-bottom: 0;
-  text-align: left;
 }
 
-/* Optional: Center it on mobile view if needed */
-@media (max-width: 768px) {
-  p.disclaimer {
-    text-align: center;
-  }
-}
-
-/* --- Mobile Device Responsive Layout & Scaling --- */
-@media (max-width: 768px) {
-  .hero-section {
-    padding-top: 110px;
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .hero-container {
-    flex-direction: column;    /* Stack vertically on mobile */
-    align-items:flex-start;       /* Center items horizontally */
-    gap: 20px;
-  }
-
-  .brand-title {
-    text-align: center;        /* Centered in mobile view */
-    line-height: 1;
-  }
-
-  .brand-tagline {
-    text-align: right;         /* Right-aligned in mobile view */
-    align-self: flex-end;      /* Pushes the block entirely to the right side */
-  }
-}
-
-/* Extra safety for very narrow screens (e.g., iPhone SE / Galaxy Fold) */
-@media (max-width: 380px) {
-  .hero-section {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-  
-  .brand-title {
-    font-size: 1.8rem;         /* Forces a smaller size to guarantee it fits */
-  }
-  
-  .brand-tagline {
-    font-size: 1.15rem;
-  }
-}
-
-/* --- Album Section Styling --- */
-:root {
-  --card-radius: 24px;         /* Smooth rounded corners matching the design */
-  --brown-bg: #4a2d20;         /* Deep warm chocolate brown */
-  --btn-bg: #faeab9;           /* Cream accent button color */
-  --btn-text: #4a2d20;
-}
-
+/* --- Album Section --- */
 .album-section {
   max-width: 1300px;
   margin: 0 auto;
   padding: 24px 16px;
-  box-sizing: border-box;
 }
 
-/* --- Grid Layout (Desktop) --- */
 .album-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -337,13 +256,13 @@ p.disclaimer {
   align-items: stretch;
 }
 
-/* --- Base Card Styles --- */
 .album-card {
   border-radius: var(--card-radius);
   overflow: hidden;
   position: relative;
-  min-height: 380px;
-  box-shadow: 0 4px 20px rgba(70, 38, 24, 0.501);
+  min-width: 0;
+  aspect-ratio: 3 / 4;   /* card height follows its width, so images shrink with the screen */
+  box-shadow: 0 4px 20px rgba(70, 38, 24, 0.2);
   transition: transform 0.3s ease;
 }
 
@@ -351,22 +270,22 @@ p.disclaimer {
   transform: translateY(-4px);
 }
 
-/* --- Image Cards --- */
+/* Absolute fill: height:100% doesn't resolve against a min-height parent */
 .image-card img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-/* --- Info Card (Brown Block) --- */
 .info-card {
   background-color: var(--brown-bg);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 36px 28px;
-  box-sizing: border-box;
+  padding: clamp(14px, 3vw, 36px) clamp(12px, 2.2vw, 28px);
 }
 
 .info-content {
@@ -374,18 +293,18 @@ p.disclaimer {
   flex-direction: column;
   height: 100%;
   justify-content: space-between;
+  gap: 24px;
 }
 
-/* --- Explore Menu Button --- */
 .explore-btn {
   display: inline-block;
   background-color: var(--btn-bg);
   color: var(--btn-text);
   font-family: 'Fredoka', 'Segoe UI', sans-serif;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: clamp(0.75rem, 1.4vw, 0.95rem);
   text-decoration: none;
-  padding: 10px 24px;
+  padding: clamp(7px, 1vw, 10px) clamp(14px, 2vw, 24px);
   border-radius: 30px;
   align-self: flex-start;
   transition: background-color 0.2s ease, transform 0.2s ease;
@@ -396,46 +315,21 @@ p.disclaimer {
   transform: scale(1.05);
 }
 
-/* --- Store Address --- */
 .store-address {
   font-family: 'Cormorant Garamond', 'Georgia', serif;
-  font-size: 1.25rem;
+  font-size: clamp(0.8rem, 1.7vw, 1.25rem);
   font-style: normal;
   font-weight: 500;
-  color: #faeab9;             /* Soft cream text color */
+  color: #faeab9;
   line-height: 1.4;
   margin-top: auto;
 }
 
-/* --- Mobile & Tablet Responsiveness --- */
-@media (max-width: 1024px) {
-  .album-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2x2 grid on tablets */
-  }
-}
-
-@media (max-width: 640px) {
-  .album-grid {
-    grid-template-columns: 1fr;    /* Stacks all cards vertically on mobile */
-  }
-  
-  .album-card {
-    min-height: 320px;
-  }
-}
-
-/* --- Straight From Our Ovens Section --- */
-:root {
-  --cream-bg: #faf5e8;
-  --brown-text: #4a2d20;
-  --accent-purple: #c586cc;
-}
-
+/* --- Straight From Our Ovens --- */
 .ovens-section {
   max-width: 1300px;
   margin: 40px auto;
   padding: 0 16px;
-  box-sizing: border-box;
 }
 
 .ovens-container {
@@ -447,7 +341,6 @@ p.disclaimer {
   box-shadow: 0 4px 24px rgba(74, 45, 32, 0.06);
 }
 
-/* Left Content */
 .ovens-left {
   display: flex;
   align-items: center;
@@ -464,11 +357,15 @@ p.disclaimer {
   letter-spacing: -0.02em;
 }
 
-/* Right Background with Bread Texture */
+/* Fallback colour shows if the photo fails to load.
+   NOTE: the original Unsplash photo ID ("...0bbc0dd") looks mistyped; swap in a valid image or a local file. */
 .ovens-right {
   position: relative;
-  /* Crisp sourdough cross-section texture background */
-  background: url('https://images.unsplash.com/photo-1589367920969-ab8e050bbc0dd?q=80&w=1000&auto=format&fit=crop') center/cover no-repeat;
+  background-color: #d9b99b;
+  background-image: url('https://images.unsplash.com/photo-1589367920969-ab8e050bbc0d?q=80&w=1000&auto=format&fit=crop');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -476,7 +373,6 @@ p.disclaimer {
   min-height: 480px;
 }
 
-/* Purple Oval Stickers */
 .sticker {
   position: absolute;
   background-color: #d19ad6;
@@ -487,7 +383,7 @@ p.disclaimer {
   font-size: 1.1rem;
   padding: 6px 18px;
   border-radius: 50px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   pointer-events: none;
 }
 
@@ -510,21 +406,21 @@ p.disclaimer {
   max-width: 360px;
   padding: 32px 24px;
   border-radius: 4px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  box-sizing: border-box;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   position: relative;
 }
 
-/* Jagged bottom edge effect for receipt style */
+/* Zig-zag torn-paper bottom edge */
 .receipt-card::after {
   content: "";
   position: absolute;
-  bottom: -10px;
   left: 0;
+  bottom: -8px;
   width: 100%;
-  height: 10px;
-  background: radial-gradient(circle, transparent, transparent 50%, #fcf8ee 50%, #fcf8ee 100%);
-  background-size: 16px 20px;
+  height: 8px;
+  background:
+    linear-gradient(135deg, #fcf8ee 25%, transparent 25%) 0 0 / 16px 16px,
+    linear-gradient(225deg, #fcf8ee 25%, transparent 25%) 0 0 / 16px 16px;
 }
 
 .receipt-title {
@@ -533,15 +429,7 @@ p.disclaimer {
   font-weight: 600;
   color: var(--brown-text);
   text-align: center;
-  margin-top: 0;
-  margin-bottom: 24px;
-}
-
-/* Stack price and per-piece text vertically */
-.price-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  margin: 0 0 24px;
 }
 
 .menu-list {
@@ -557,6 +445,7 @@ p.disclaimer {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  gap: 12px;
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.15rem;
   color: var(--brown-text);
@@ -566,10 +455,18 @@ p.disclaimer {
   font-style: italic;
 }
 
+.price-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  white-space: nowrap;
+}
+
 .item-price {
   font-weight: 600;
+  white-space: nowrap;
 }
-/* Styling for "(per piece)" text */
+
 .item-unit {
   font-family: 'Cormorant Garamond', serif;
   font-size: 0.85rem;
@@ -578,7 +475,6 @@ p.disclaimer {
   margin-top: -2px;
 }
 
-/* Styling for "Free Customised Note" above the line */
 .receipt-note {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.05rem;
@@ -586,12 +482,12 @@ p.disclaimer {
   font-weight: 600;
   color: #4a2d20;
   text-align: center;
-  margin: 20px 0 10px 0;
+  margin: 20px 0 10px;
 }
 
 .receipt-divider {
   border-top: 1px dashed #d9ccb2;
-  margin: 24px 0 20px 0;
+  margin: 16px 0 20px;
 }
 
 .explore-menu-btn {
@@ -614,14 +510,12 @@ p.disclaimer {
   transform: scale(1.02);
 }
 
-/* --- Functional Popup Modal Styles --- */
+/* --- Menu Modal --- */
 .menu-modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background-color: rgba(74, 45, 32, 0.6);
+  -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
@@ -631,7 +525,6 @@ p.disclaimer {
   transition: opacity 0.3s ease, visibility 0.3s ease;
   z-index: 2000;
   padding: 20px;
-  box-sizing: border-box;
 }
 
 .menu-modal.active {
@@ -643,11 +536,12 @@ p.disclaimer {
   background-color: var(--cream-bg);
   width: 100%;
   max-width: 600px;
+  max-height: 90vh;      /* never taller than the screen */
+  overflow-y: auto;      /* scroll inside on small phones */
   padding: 40px;
   border-radius: 24px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
   position: relative;
-  box-sizing: border-box;
   transform: translateY(20px);
   transition: transform 0.3s ease;
 }
@@ -658,11 +552,12 @@ p.disclaimer {
 
 .close-modal {
   position: absolute;
-  top: 20px;
-  right: 24px;
+  top: 16px;
+  right: 20px;
   background: none;
   border: none;
   font-size: 2rem;
+  line-height: 1;
   color: var(--brown-text);
   cursor: pointer;
 }
@@ -670,7 +565,8 @@ p.disclaimer {
 .modal-title {
   font-family: 'Fredoka', sans-serif;
   color: var(--brown-text);
-  margin-top: 0;
+  margin: 0;
+  padding-right: 32px;
   font-size: 2rem;
 }
 
@@ -678,7 +574,7 @@ p.disclaimer {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.2rem;
   color: var(--brown-text);
-  margin-bottom: 24px;
+  margin: 8px 0 24px;
 }
 
 .modal-menu-grid {
@@ -692,7 +588,7 @@ p.disclaimer {
   color: var(--brown-text);
   border-bottom: 2px solid #e6d7bc;
   padding-bottom: 6px;
-  margin-bottom: 12px;
+  margin: 0 0 12px;
 }
 
 .menu-category ul {
@@ -707,48 +603,19 @@ p.disclaimer {
 .menu-category li {
   display: flex;
   justify-content: space-between;
+  gap: 12px;
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.1rem;
   color: var(--brown-text);
 }
 
-/* --- Mobile Responsiveness --- */
-@media (max-width: 860px) {
-  .ovens-container {
-    grid-template-columns: 1fr;
-  }
-  
-  .ovens-left {
-    padding: 40px 24px 20px 24px;
-  }
-
-  .ovens-right {
-    min-height: 420px;
-    padding: 30px 16px;
-  }
-
-  .modal-menu-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-}
-
-/* --- Customer Reviews Section --- */
-:root {
-  --reviews-bg-dark: #4a2d20;   /* Contrasting deep chocolate brown */
-  --reviews-text-light: #faf5e8; /* Soft cream text */
-  --card-bg: #fcf8ee;           /* Cream card background */
-  --card-text: #4a2d20;         /* Dark brown text for card */
-}
-
+/* --- Customer Reviews --- */
 .reviews-section {
   max-width: 1300px;
   margin: 40px auto;
   padding: 0 16px;
-  box-sizing: border-box;
 }
 
-/* Horizontal Split Design for Desktop */
 .reviews-container {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
@@ -758,7 +625,6 @@ p.disclaimer {
   box-shadow: 0 6px 24px rgba(74, 45, 32, 0.12);
 }
 
-/* Header Pane (Left side on desktop) */
 .reviews-header-pane {
   display: flex;
   flex-direction: column;
@@ -780,30 +646,10 @@ p.disclaimer {
   font-size: clamp(2.4rem, 4vw, 3.6rem);
   font-weight: 700;
   line-height: 1.1;
-  margin: 0 0 20px 0;
+  margin: 0 0 20px;
   letter-spacing: -0.02em;
 }
 
-.rating-badge {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 10px;
-}
-
-.stars {
-  color: #f4c430;
-  font-size: 1.2rem;
-  letter-spacing: 2px;
-}
-
-.rating-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  opacity: 0.9;
-}
-
-/* Content Pane (Right side on desktop) */
 .reviews-content-pane {
   display: flex;
   align-items: center;
@@ -819,7 +665,6 @@ p.disclaimer {
   padding: 36px 32px;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  box-sizing: border-box;
 }
 
 .review-text {
@@ -828,8 +673,7 @@ p.disclaimer {
   font-style: italic;
   color: var(--card-text);
   line-height: 1.4;
-  margin-top: 0;
-  margin-bottom: 24px;
+  margin: 0 0 24px;
 }
 
 .reviewer-info {
@@ -847,44 +691,12 @@ p.disclaimer {
   margin: 0;
 }
 
-.reviewer-tag {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.95rem;
-  color: #7a5c4d;
-}
-
-/* --- Vertical Split Design for Mobile & Tablets --- */
-@media (max-width: 860px) {
-  .reviews-container {
-    grid-template-columns: 1fr; /* Switches to vertical stack */
-  }
-
-  .reviews-header-pane {
-    padding: 40px 24px 20px 24px;
-    text-align: center;
-    align-items: center;
-  }
-
-  .reviews-content-pane {
-    padding: 20px 24px 40px 24px;
-  }
-}
-
-/* --- Footer Styling --- */
-:root {
-  --footer-bg: #311c13;         /* Dark contrasting chocolate brown background */
-  --footer-text: #faeab9;       /* Cream text color */
-  --footer-accent: #e8929a;     /* Soft rose highlight */
-  --footer-border: #4a2d20;     /* Muted border color */
-}
-
+/* --- Footer --- */
 .site-footer {
   background-color: var(--footer-bg);
   color: var(--footer-text);
-  padding-top: 60px;
-  padding-bottom: 20px;
+  padding: 60px 0 20px;
   margin-top: 60px;
-  box-sizing: border-box;
 }
 
 .footer-container {
@@ -899,14 +711,14 @@ p.disclaimer {
 .footer-col {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
-/* Brand Section */
 .footer-brand {
   font-family: 'Fredoka', sans-serif;
   font-size: 2.2rem;
   font-weight: 700;
-  margin: 0 0 6px 0;
+  margin: 0 0 6px;
   color: var(--footer-text);
 }
 
@@ -915,10 +727,9 @@ p.disclaimer {
   font-size: 1.15rem;
   font-style: italic;
   opacity: 0.85;
-  margin: 0 0 20px 0;
+  margin: 0 0 20px;
 }
 
-/* Instagram Button */
 .instagram-link {
   display: inline-flex;
   align-items: center;
@@ -931,8 +742,13 @@ p.disclaimer {
   font-family: 'Fredoka', sans-serif;
   font-size: 0.9rem;
   width: fit-content;
-  border: 1px solid var(--footer-border);
+  max-width: 100%;
+  border: 1px solid var(--footer-accent);
   transition: all 0.3s ease;
+}
+
+.instagram-link img {
+  flex-shrink: 0;
 }
 
 .instagram-link:hover {
@@ -941,18 +757,15 @@ p.disclaimer {
   transform: translateY(-2px);
 }
 
-/* Headings */
 .footer-heading {
   font-family: 'Fredoka', sans-serif;
   font-size: 1.25rem;
-  margin-top: 0;
-  margin-bottom: 16px;
+  margin: 0 0 16px;
   color: #ffffff;
-  border-bottom: 1px solid var(--footer-border);
+  border-bottom: 1px solid var(--footer-accent);
   padding-bottom: 8px;
 }
 
-/* Delivery Section & Pulse Animation */
 .delivery-status {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.2rem;
@@ -960,21 +773,21 @@ p.disclaimer {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin: 0 0 12px 0;
+  margin: 0 0 12px;
 }
 
 .pulse-dot {
+  flex-shrink: 0;
   width: 10px;
   height: 10px;
   background-color: #4CAF50;
   border-radius: 50%;
-  box-shadow: 0 0 0 rgba(76, 175, 80, 0.4);
   animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7); }
-  70% { box-shadow: 0 0 0 8px rgba(76, 175, 80, 0); }
+  0%   { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7); }
+  70%  { box-shadow: 0 0 0 8px rgba(76, 175, 80, 0); }
   100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
 }
 
@@ -986,7 +799,6 @@ p.disclaimer {
   line-height: 1.35;
 }
 
-/* Contact Info List */
 .contact-list {
   list-style: none;
   padding: 0;
@@ -1008,10 +820,9 @@ p.disclaimer {
   color: var(--footer-accent);
 }
 
-/* Footer Bottom Bar */
 .footer-bottom {
   margin-top: 40px;
-  padding-top: 20px;
+  padding: 20px 16px 0;
   border-top: 1px solid var(--footer-border);
   text-align: center;
   font-family: 'Cormorant Garamond', serif;
@@ -1019,16 +830,158 @@ p.disclaimer {
   opacity: 0.75;
 }
 
-/* --- Mobile Responsiveness --- */
+.footer-bottom p {
+  margin: 0;
+}
+
+/* --- Responsive Breakpoints --- */
+
+@media (max-width: 1024px) {
+  .album-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .album-card {
+    aspect-ratio: 4 / 5;
+  }
+}
+
+@media (max-width: 860px) {
+  .ovens-container {
+    grid-template-columns: 1fr;
+  }
+
+  .ovens-left {
+    padding: 40px 24px 20px;
+  }
+
+  .ovens-right {
+    min-height: 420px;
+    padding: 30px 16px;
+  }
+
+  .modal-menu-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .reviews-container {
+    grid-template-columns: 1fr;
+  }
+
+  .reviews-header-pane {
+    padding: 40px 24px 20px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .reviews-content-pane {
+    padding: 20px 24px 40px;
+  }
+}
+
 @media (max-width: 768px) {
+  .site-header {
+    padding: 12px;
+  }
+
+  .nav-container {
+    padding: 10px 20px;
+    border-radius: 30px;
+  }
+
+  .nav-toggle {
+    display: block;
+    z-index: 1002;
+  }
+
+  .nav-toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .nav-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 300px;
+    height: 100vh;
+    height: 100dvh;
+    background-color: var(--nav-bg);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    box-shadow: -10px 0 30px rgba(74, 53, 50, 0.1);
+    transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+    z-index: 1001;
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .nav-link {
+    font-size: 1.35rem;
+  }
+
+  /* Hero: single centred column */
+  .hero-section {
+    padding: 110px 16px 40px;
+  }
+
+  .hero-container {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 0;
+    justify-items: center;
+  }
+
+  .brand-title,
+  p.disclaimer,
+  .hero-order-btn,
+  .brand-tagline {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .brand-title {
+    font-size: clamp(2rem, 12vw, 4rem);
+    text-align: center;
+    line-height: 1;
+  }
+
+  p.disclaimer {
+    text-align: center;
+  }
+
+  .hero-order-btn {
+    justify-self: center;
+  }
+
+  .brand-tagline {
+    align-self: center;
+    text-align: center;
+    margin-top: 28px;
+  }
+
+  /* Footer stacks */
   .footer-container {
-    grid-template-columns: 1fr; /* Stacks columns vertically on mobile */
+    grid-template-columns: 1fr;
     gap: 32px;
     text-align: center;
   }
 
-  .brand-col, 
-  .delivery-col, 
+  .brand-col,
+  .delivery-col,
   .contact-col {
     align-items: center;
   }
@@ -1044,5 +997,67 @@ p.disclaimer {
   .footer-heading {
     width: 100%;
     max-width: 200px;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Keep 2 columns on phones: smaller pictures instead of one huge stacked column */
+  .album-grid {
+    gap: 12px;
+  }
+
+  .album-section {
+    padding: 16px 12px;
+  }
+
+  .album-card {
+    border-radius: 16px;
+  }
+
+  .modal-content {
+    padding: 28px 20px;
+  }
+
+  .sticker-warm {
+    right: 20px;
+  }
+
+  .sticker-fresh {
+    left: 16px;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-section {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .brand-tagline {
+    font-size: 1.15rem;
+  }
+
+  .receipt-card {
+    padding: 28px 18px;
+  }
+
+  .ovens-left,
+  .reviews-header-pane {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .review-card {
+    padding: 28px 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
   }
 }
